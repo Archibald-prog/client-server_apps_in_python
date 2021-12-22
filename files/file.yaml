@@ -1,0 +1,11 @@
+items:
+- table
+- chair
+- sofa
+- computer desk
+price:
+  chair: 5ˆ
+  computer desk: 150ˆ
+  sofa: 400ˆ
+  table: 100ˆ
+quantity: 4
