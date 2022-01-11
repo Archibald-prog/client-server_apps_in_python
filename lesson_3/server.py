@@ -7,7 +7,7 @@ from utils import load_configs, get_message, send_message
 CONFIGS = dict()
 
 
-def handle_message(message):
+def handle_message(message, CONFIGS):
     if CONFIGS.get('ACTION') in message \
             and message[CONFIGS.get('ACTION')] == CONFIGS.get('PRESENCE') \
             and CONFIGS.get('TIME') in message \
@@ -69,7 +69,7 @@ def main():
             # в функцию get_message() передаем конфигурации,
             # которые возвращает функция load_configs() из модуля utils.py
             message = get_message(client, CONFIGS)
-            response = handle_message(message)
+            response = handle_message(message, CONFIGS)
             send_message(client, response, CONFIGS)
             client.close()
         except (ValueError, json.JSONDecodeError):
